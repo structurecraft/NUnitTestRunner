@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFrameworks>net8.0;net48</TargetFrameworks>
     <AssemblyName>NUnitTestRunner</AssemblyName>
     <RootNamespace>NUnitTestRunner</RootNamespace>
     <Platforms>x64</Platforms>
@@ -30,10 +30,6 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <RuntimeIdentifiers>win-x64;win10-arm;win10-arm-aot;win10-arm64-aot;win10-x86;win10-x86-aot;win10-x64;win10-x64-aot</RuntimeIdentifiers>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
@@ -46,7 +42,7 @@
 
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.13.3" />
-    <PackageReference Include="RhinoCommon" Version="7.27.23032.13001" />
+    <PackageReference Include="RhinoCommon" Version="8.19.25132.1001" />
   </ItemGroup>
 
   <ItemGroup>
@@ -74,7 +70,7 @@
     <FallbackCulture>en-US</FallbackCulture>
     <Title>NUnitTestRunner</Title>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
     <FileVersion>$(Assembly Version)</FileVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
