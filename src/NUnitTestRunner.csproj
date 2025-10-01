@@ -12,7 +12,7 @@
   <PropertyGroup>
     <!-- https://stackoverflow.com/questions/46352600/how-do-i-automatically-set-all-projects-in-my-solution-to-the-same-version#46355164 -->
     <Company>StructureCraft</Company>
-    <Authors>CSykes</Authors>
+    <Authors>Callum Sykes, Siebren Kwekkeboom, Dan Cascaval</Authors>
     <PackageId>RhinoTestRunner</PackageId>
     <AssemblyTitle>TestRunner</AssemblyTitle>
     <RepositoryType>GitHub</RepositoryType>
@@ -20,7 +20,7 @@
     <RepositoryUrl>https://github.com/structurecraft/NUnitTestRunner/</RepositoryUrl>
     <PackageTags>TestRunner</PackageTags>
     <Description>The TestRunner</Description>
-    <Copyright>StructureCraft 2023</Copyright>
+    <Copyright>StructureCraft 2025</Copyright>
     <NeutralLanguage>en</NeutralLanguage>
   </PropertyGroup>
 
