@@ -5,8 +5,8 @@
     <AssemblyName>NUnitTestRunner</AssemblyName>
     <RootNamespace>NUnitTestRunner</RootNamespace>
     <Platforms>x64</Platforms>
-		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<TargetExt>.rhp</TargetExt>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -42,7 +42,9 @@
 
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.13.3" />
-    <PackageReference Include="RhinoCommon" Version="8.19.25132.1001" />
+		<PackageReference Include="RhinoCommon" Version="8.19.25132.1001">
+			<ExcludeAssets>runtime</ExcludeAssets>
+		</PackageReference>
   </ItemGroup>
 
   <ItemGroup>
