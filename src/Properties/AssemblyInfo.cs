@@ -29,7 +29,7 @@ using Rhino.PlugIns;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("RhinoTestRunner")]
-[assembly: AssemblyCopyright("Copyright ©  202=5")]
+[assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -56,4 +56,4 @@ using Rhino.PlugIns;
 [assembly: AssemblyFileVersion("1.3.0.0")]
 
 // Make compatible with Rhino Installer Engine
-[assembly: AssemblyInformationalVersion("2")]
+[assembly: AssemblyInformationalVersion("3")]
