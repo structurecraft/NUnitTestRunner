@@ -33,7 +33,7 @@ namespace NUnitTestRunner.Commands
 			RhinoApp.CommandWindowCaptureEnabled = true;
 			Args = null;
 
-			//if (mode == RunMode.Scripted)
+			if (mode == RunMode.Scripted)
 			{
 				GetString gs = new GetString();
 				gs.AcceptEnterWhenDone(true);
@@ -59,25 +59,25 @@ namespace NUnitTestRunner.Commands
 					}
 				}
 			}
-			//else
-			//{
-			//	var selFolderDialog = new Eto.Forms.OpenFileDialog()
-			//	{
-			//		CheckFileExists = true,
-			//		MultiSelect = true,
-			//		Title = "Choose a Test DLL",
-			//	};
-			//	selFolderDialog.Filters.Add(new FileFilter("DLL", FileUtils.AcceptedExtensions.Select(ext => $"*{ext}").ToArray()));
-			//	var result = selFolderDialog.ShowDialog(RhinoEtoApp.MainWindow);
+			else
+			{
+				var selFolderDialog = new Eto.Forms.OpenFileDialog()
+				{
+					CheckFileExists = true,
+					MultiSelect = true,
+					Title = "Choose a Test DLL",
+				};
+				selFolderDialog.Filters.Add(new FileFilter("DLL", FileUtils.AcceptedExtensions.Select(ext => $"*{ext}").ToArray()));
+				var result = selFolderDialog.ShowDialog(RhinoEtoApp.MainWindow);
 
-			//	if (result == DialogResult.Ok)
-			//	{
-			//		string _input = selFolderDialog.Filenames?.FirstOrDefault()?.CorrectPath();
+				if (result == DialogResult.Ok)
+				{
+					string _input = selFolderDialog.Filenames?.FirstOrDefault()?.CorrectPath();
 
-			//		Args = ArgHandler.Parse(_input);
-			//		Args.Doc = doc;
-			//	}
-			//}
+					Args = ArgHandler.Parse(_input);
+					Args.Doc = doc;
+				}
+			}
 
 			Args.Mode = mode;
 
