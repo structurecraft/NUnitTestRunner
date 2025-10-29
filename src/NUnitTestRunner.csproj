@@ -4,7 +4,6 @@
     <TargetFrameworks>net8.0;net48</TargetFrameworks>
     <AssemblyName>NUnitTestRunner</AssemblyName>
     <RootNamespace>NUnitTestRunner</RootNamespace>
-    <Platforms>x64</Platforms>
 		<TargetExt>.rhp</TargetExt>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
