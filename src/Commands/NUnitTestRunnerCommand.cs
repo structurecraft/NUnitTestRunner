@@ -14,7 +14,7 @@ namespace NUnitTestRunner.Commands
 	public sealed class NUnitTestRunnerCommand : Rhino.Commands.Command
 	{
 
-		static bool IsReady { get; set; }
+		private static bool IsReady { get; set; }
 
 		internal NUnitTestRunnerArgs Args { get; private set; }
 

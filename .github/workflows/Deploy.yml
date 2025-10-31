@@ -2,12 +2,13 @@
     name: Test
     # This Workflow was written by CSykes
     on:
-      pull_request:
-        types:
-          - closed
-        paths:
-          - "src/manifest.yml"
-          - ".github/workflows/*.yml"
+      workflow_dispatch:
+      # pull_request:
+        # types:
+          # - closed
+        # paths:
+          # - "src/manifest.yml"
+          # - ".github/workflows/*.yml"
 
     jobs:
       BuildAndTest:

@@ -9,7 +9,7 @@ namespace NUnitTestRunner.UI
 	/// <summary>Offers up a UI for the Test Runner</summary>
 	internal class TestRunnerDialog : Dialog<DialogResult>
 	{
-		class NUnitRunArgs : EventArgs
+		private class NUnitRunArgs : EventArgs
 		{
 			public enum TraceLevels
 			{
@@ -24,8 +24,8 @@ namespace NUnitTestRunner.UI
 			}
 		}
 
-		ListBox TestListBox { get; set; }
-		List<IListItem> TestItems { get; set; }
+		private ListBox TestListBox { get; set; }
+		private List<IListItem> TestItems { get; set; }
 
 		/// <summary>Creates a new TestRunnerDialog</summary>
 		public TestRunnerDialog(Assembly testAssembly, NUnitTestRunnerArgs args)
@@ -150,11 +150,13 @@ namespace NUnitTestRunner.UI
 		private void ExecuteTests(NUnitTestRunnerArgs args, NUnitRunArgs e)
 		{
 			Visible = false;
+			if (e.TestItems.Count == 0) return;
 
 			try
 			{
-				// TODO: This line is what makes the RunAll button do decidedly nothing.
-				// We should either remove the button or loop over the list of items.
+				var runner = new RhinoTestRunner(args);
+				SelectedRhinoTestFilter filter = null;
+
 				if (e.TestItems.Count == 1)
 				{
 					string className = null;
@@ -171,11 +173,11 @@ namespace NUnitTestRunner.UI
 						Type declaringType = (tests as IEnumerable<MethodInfo>).First().DeclaringType;
 						className = declaringType.Name;
 					}
-
-					var runner = new RhinoTestRunner(args);
-					runner.Run(new SelectedRhinoTestFilter(methodName, className));
+					
+					filter = new SelectedRhinoTestFilter(methodName, className);
 				}
 
+				runner.Run(filter);
 
 			}
 			catch (Exception ex)

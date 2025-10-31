@@ -5,6 +5,7 @@ using NUnitTestRunner.Console;
 using NUnitTestRunner.Utils;
 
 using Rhino.Commands;
+using Rhino.Runtime.InteropWrappers;
 using Rhino.UI;
 
 namespace NUnitTestRunner.Commands
@@ -153,11 +154,19 @@ Valid options:
 				return Result.Failure;
 			}
 
-			object @return;
+			object @return = null;
 
 			try
 			{
-				@return = method.Invoke(null, null);
+				if (method.IsStatic)
+				{
+					@return = method.Invoke(null, null);
+				}
+				else
+				{
+					var classInstance = Activator.CreateInstance(type);
+					@return = method.Invoke(classInstance, null);
+				}
 			}
 			catch (Exception ex)
 			{
